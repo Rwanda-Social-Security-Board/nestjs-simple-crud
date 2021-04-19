@@ -15,11 +15,12 @@ export class ContributionsService {
     return this.list;
   }
 
-  create(payload: CreateContributionsDto): Record<string, string | number>[] {
-    this.list.push({
+  create(payload: CreateContributionsDto): Record<string, string | number> {
+    const newContribution = {
       id: this.list.length + 1,
       ...payload,
-    });
-    return this.list;
+    };
+    this.list.push(newContribution);
+    return newContribution;
   }
 }

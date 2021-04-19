@@ -14,7 +14,7 @@ export class ContributionsController {
   @Post()
   createContributions(
     @Body() payload: CreateContributionsDto,
-  ): Record<string, string | number>[] {
+  ): Record<string, string | number> {
     return this.service.create(payload);
   }
 }
